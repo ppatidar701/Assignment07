@@ -1,0 +1,26 @@
+#---------------------#
+# Title: Pickle Demonstrate
+# Dev : Puja Patidar
+# Date: October 30,2019
+# ChangeLog:(PPatidar, creating file, 30/10/2019)
+#---------------------#
+
+import pickle
+
+strfirstName = str(input("Enter a First Name: "))
+strlastName = str((input("Enter a Last name: ")))
+inlastFour = int(input("Enter Last Four of SSN Number: "))
+firstuserData =   [strlastName, strfirstName, inlastFour]
+
+# Store the data
+
+objFile = open("nameline.dat", "ab")
+pickle.dump(firstuserData, objFile)
+objFile.close()
+
+# Read the data back
+
+objFile = open("nameline.dat", "rb")
+ObjFileData = pickle.load(objFile)
+objFile.close()
+print(objFileData)
